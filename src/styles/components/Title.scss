@@ -2,14 +2,14 @@
 .title {
   margin-bottom: 2rem;
   h2 {
-    margin-bottom: .7rem;
+    margin-bottom: 0.7rem;
     font-size: xx-large;
     color: $headingColor;
   }
   div {
-    height: .3rem;
+    height: 0.3rem;
     width: 3rem;
-    border-radius: .1rem;
+    border-radius: 0.1rem;
   }
   div .blue {
     background-color: $headingColor;
@@ -18,7 +18,6 @@
     background-color: $pinkColor;
   }
 }
-
 .center {
   display: flex;
   justify-content: center;
