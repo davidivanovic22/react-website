@@ -1,9 +1,9 @@
 import React from 'react';
 import "../styles/components/BrandName.scss"
 
-const BrandName = () => {
+const BrandName = ({ isFooter = false }) => {
     return (
-        <div className="brand">
+        <div className={`brand ${isFooter === true ? "footer" : ""}`}>
             <span>cryo</span>
         </div>
     );
