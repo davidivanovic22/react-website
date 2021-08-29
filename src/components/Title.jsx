@@ -4,10 +4,10 @@ import "../styles/components/Title.scss";
 const Title = ({title, color, lineCenter = false}) => {
     return (
         <div className={`title ${lineCenter === true ? "center" : ""}`}>
-           <h2>{title}</h2>
-            <h2 className={`${color}`}>
+            <h2>{title}</h2>
+            <div className={`${color} `}>
                 <span></span>
-            </h2>
+            </div>
         </div>
     );
 };
