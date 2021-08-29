@@ -2,10 +2,14 @@ import React from 'react';
 import "../styles/components/Blog.scss"
 import {HiOutlineArrowNarrowRight} from "react-icons/hi";
 import Button from "./Button";
-const Blog = ({ image, title, subTitle}) => {
+import {motion} from "framer-motion";
+
+const Blog = ({ image, title, subTitle, variants, animate}) => {
     return (
-        <div
+        <motion.div
             className="blog-container"
+            variants={variants}
+            animate={animate}
         >
             <div className="image">
                 <img src={image} alt="Blog" />
@@ -23,7 +27,7 @@ const Blog = ({ image, title, subTitle}) => {
                     icon={<HiOutlineArrowNarrowRight />}
                 />
             </div>
-        </div>
+        </motion.div>
     );
 };
 

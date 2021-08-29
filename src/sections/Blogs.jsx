@@ -6,16 +6,23 @@ import Button from "../components/Button";
 import BlogImage1 from "../assets/blogImage1.jpg";
 import BlogImage2 from "../assets/blogImage2.jpg";
 import BlogImage3 from "../assets/blogImage3.jpg";
+import {textAnimation, cardAnimation} from "../Animation";
+import {useScroll} from "../components/useScroll";
+import {motion} from "framer-motion";
 
 const Blogs = () => {
+    const [element, controls] = useScroll();
     return (
-        <div className="blogs-container" id="blog">
+        <div className="blogs-container" id="blog" ref={element}>
             <div className="container">
-                <div
-                    className="title-container">
+                <motion.div
+                    className="title-container"
+                    variants={textAnimation}
+                    animate={controls}
+                    transition={{duration: 1}}>
                     <Title title="Blogs" color="pink" lineCenter={true}/>
                     <p>Insights and advice from our experts.</p>
-                </div>
+                </motion.div>
                 <div className="blogs">
                     <Blog
                         image={BlogImage1}
@@ -23,16 +30,22 @@ const Blogs = () => {
                         subTitle="When there appears an idea to create a startup, have to take into
             account all the risks you will face and evalute them thoughtfullu.
             Also as a rule..."
+                        variants={cardAnimation}
+                        animate={controls}
                     />
                     <Blog
                         image={BlogImage2}
                         title="A Day in the life on an Engineering Manager"
                         subTitle="During the eight years I spent as an engineering manager, I regularly tracked how I spent my time. As a startup engineering manager, I was ... "
+                        variants={cardAnimation}
+                        animate={controls}
                     />
                     <Blog
                         image={BlogImage3}
                         title="How to Build a Strong Remote Work Culture"
                         subTitle="Kishan Sheth is the compnay VP of Talent Operations responsible for matching some of the world's greatest freelancers with companies who..."
+                        variants={cardAnimation}
+                        animate={controls}
                     />
                 </div>
                 <div

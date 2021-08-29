@@ -5,14 +5,20 @@ import {MdEmail} from "react-icons/md";
 import {FaPhoneAlt, FaFacebookF, FaTwitter} from "react-icons/fa";
 import {ImLocation} from "react-icons/im";
 import {AiFillInstagram, AiFillLinkedin, AiOutlineSend} from "react-icons/ai";
-
+import {fromUp, fromDown, textAnimation} from "../Animation";
+import {useScroll} from "../components/useScroll";
+import {motion} from "framer-motion";
 const Footer = () => {
+    const [element, controls] = useScroll();
     return (
-        <div className="footer-container" id="footer">
+        <div className="footer-container" id="footer" ref={element}>
             <div className="container">
                 <div className="main-container">
-                    <div
+                    <motion.div
                         className="news-letter"
+                        variants={fromUp}
+                        animate={controls}
+                        transition={{duration: .5}}
                     >
                         <BrandName isFooter={true}/>
                         <p>
@@ -24,9 +30,12 @@ const Footer = () => {
                                 <AiOutlineSend/>
                             </button>
                         </div>
-                    </div>
-                    <div
+                    </motion.div>
+                    <motion.div
                         className="quick-links"
+                        variants={fromDown}
+                        animate={controls}
+                        transition={{duration: .5}}
                     >
                         <h3>Quick Links</h3>
                         <ul>
@@ -55,9 +64,12 @@ const Footer = () => {
                                 <a href="#">Privacy Policy</a>
                             </li>
                         </ul>
-                    </div>
-                    <div
+                    </motion.div>
+                    <motion.div
                         className="industries"
+                        variants={fromUp}
+                        animate={controls}
+                        transition={{duration: .5}}
                     >
                         <h3>Industires</h3>
                         <ul>
@@ -83,9 +95,12 @@ const Footer = () => {
                                 <a href="#">IOS App Development</a>
                             </li>
                         </ul>
-                    </div>
-                    <div
+                    </motion.div>
+                    <motion.div
                         className="touch"
+                        variants={fromDown}
+                        animate={controls}
+                        transition={{duration: .5}}
                     >
                         <h3>Get in Touch</h3>
                         <div className="touch-section">
@@ -122,7 +137,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
                 <div className="copyright">
                     <div className="copy">

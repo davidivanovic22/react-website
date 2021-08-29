@@ -5,13 +5,20 @@ import Button from "../components/Button";
 import {GoPlay} from "react-icons/go";
 import {HiOutlineArrowNarrowRight} from "react-icons/all";
 import Navbar from "../components/Navbar";
+import {motion} from "framer-motion";
+import {headerAnimation, imageAnimation} from "../Animation";
+import {useScroll} from "../components/useScroll";
 
 const Starter = () => {
+    const [element, controls] = useScroll();
     return (
-        <div className="main-container">
+        <div className="main-container" ref={element}>
             <Navbar/>
             <div className="container">
-                <div className="content">
+                <motion.div className="content"
+                            variants={headerAnimation}
+                            animate={controls}
+                            transition={{delay: .2, type: "tween"}}>
                     <h1>
                         We Provide Solutions to Help You to Build Grow Your Business!
                     </h1>
@@ -23,10 +30,13 @@ const Starter = () => {
                         <Button content="Watch Video" icon={<GoPlay/>}/>
                         <Button content="Request Quote" icon={<HiOutlineArrowNarrowRight/>} color="pink"/>
                     </div>
-                </div>
-                <div className="image">
+                </motion.div>
+                <motion.div className="image"
+                            variants={imageAnimation}
+                            animate={controls}
+                            transition={{type: "tween"}}>
                     <img src={WorkImage} alt="Work Image"/>
-                </div>
+                </motion.div>
             </div>
         </div>
     );
