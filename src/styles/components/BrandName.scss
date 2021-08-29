@@ -1,0 +1,15 @@
+@import "../utils/colors.scss";
+
+.brand {
+  cursor: pointer;
+  span {
+    text-transform: uppercase;
+    font-size: xx-large;
+    border: .1rem solid #f50460;
+    color: $blueColor;
+    padding: .6rem 1rem;
+    border-radius: .3rem;
+    font-weight: bolder;
+    letter-spacing: .2rem;
+  }
+}
