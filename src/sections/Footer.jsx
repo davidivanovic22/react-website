@@ -8,7 +8,7 @@ import {AiFillInstagram, AiFillLinkedin, AiOutlineSend} from "react-icons/ai";
 
 const Footer = () => {
     return (
-        <div className="footer-container">
+        <div className="footer-container" id="footer">
             <div className="container">
                 <div className="main-container">
                     <div

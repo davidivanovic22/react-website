@@ -10,7 +10,7 @@ import {SiGooglemessages} from "react-icons/si";
 
 const About = () => {
     return (
-        <div className="about-container">
+        <div className="about-container" id="about">
             <div className="container">
                 <div className="details">
                     <Title title="About CRYO" color="blue"/>
