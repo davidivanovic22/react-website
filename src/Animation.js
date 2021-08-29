@@ -102,3 +102,19 @@ export const fromDown = {
     }
 }
 
+export const buttonAnimation = {
+    hidden: {
+        x: -800,
+        rotate: -800,
+        scale: 0,
+        opacity: 0,
+    },
+    show: {
+        x: 0,
+        rotate: 0,
+        scale: 1,
+        opacity: 1,
+    }
+}
+
+

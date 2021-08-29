@@ -6,7 +6,7 @@ import Button from "../components/Button";
 import BlogImage1 from "../assets/blogImage1.jpg";
 import BlogImage2 from "../assets/blogImage2.jpg";
 import BlogImage3 from "../assets/blogImage3.jpg";
-import {textAnimation, cardAnimation} from "../Animation";
+import {textAnimation, cardAnimation, buttonAnimation} from "../Animation";
 import {useScroll} from "../components/useScroll";
 import {motion} from "framer-motion";
 
@@ -48,11 +48,15 @@ const Blogs = () => {
                         animate={controls}
                     />
                 </div>
-                <div
+                <motion.div
                     className="button-container"
+                    variants={buttonAnimation}
+                    animate={controls}
+                    transition={{duration:1, delay: .1}}
                 >
-                    <Button content="View All"/>
-                </div>
+                    <Button content="View All"
+                    />
+                </motion.div>
             </div>
         </div>
     );
